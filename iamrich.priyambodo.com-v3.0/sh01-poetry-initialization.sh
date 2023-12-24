@@ -11,16 +11,26 @@ poetry config virtualenvs.in-project true
 poetry install
 poetry shell
 
-#Add your Python Dependency Package
+#Add your Python Dependency Package (based on your needs)
 poetry add streamlit
 poetry add google-cloud-aiplatform
 poetry add google-cloud-logging
+poetry add langchain=0.0.235
+poetry add sqlparse=0.4.4
+poetry add SQLAlchemy=1.4.49
+poetry add sqlalchemy-bigquery;python_version<'3.12'
+
+#Create requirements.txt (Google Cloud Build need this)
+poetry export -f requirements.txt --output requirements.txt
 
 #Operational that you might need (optional)
 poetry remove streamlit #removing package
+poetry install --no-root #optional if you change toml manual
+poetry lock #optional if you change toml manual
+poetry env list
 poetry env info
 poetry show --tree
 poetry show --latest
 poetry exit
-poetry list env
+poetry update
 deactivate #deactivate the environment

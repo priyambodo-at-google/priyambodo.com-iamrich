@@ -1,1 +1,1 @@
-iamrich-genai-app-v3
+iamrich-genai-app-v3.1

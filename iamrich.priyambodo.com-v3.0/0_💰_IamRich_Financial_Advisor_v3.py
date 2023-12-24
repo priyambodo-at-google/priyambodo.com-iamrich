@@ -19,7 +19,7 @@ html_code = """
 def run():
     st.set_page_config(page_icon="image/usd.ico")
     st.markdown(vNoLabel, unsafe_allow_html=True)
-    st.write("# 💰 IamRich - Your Smart Personal Financial Advisor application (v3)")
+    st.write("# 💰 IamRich - Your Smart Personal Financial Advisor application (v3.0)")
     st.subheader("//IamRich is powered by Google Cloud Generative AI!")
     st.write(html_code)
    
@@ -50,7 +50,7 @@ def run():
     st.markdown(
         """
         This application is maintained by <b>Doddi Priyambodo</b> (priyambodo@google.com | doddi@bicarait.com)   
-        App Name & latest Version: <b>IamRich-v3.0.0</b>
+        App Name & latest Version: <b>IamRich-v3.0</b>
         """, unsafe_allow_html=True
     )
     

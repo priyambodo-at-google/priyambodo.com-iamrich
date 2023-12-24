@@ -1,13 +1,7 @@
 #Import the required Libraries
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-from typing import List
 from typing import Any
-from google.cloud import discoveryengine
-import json
-import webbrowser
-import os
 
 # Defining variables for the project
 project_id = "work-mylab-machinelearning"

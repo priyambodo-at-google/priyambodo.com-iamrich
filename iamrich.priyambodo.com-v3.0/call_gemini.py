@@ -8,7 +8,7 @@ import warnings
 from pathlib import Path as p
 from pprint import pprint
 import pandas as pd
-from pydantic import BaseModel
+#from pydantic import BaseModel
 
 # Langchain
 import langchain
@@ -38,7 +38,7 @@ vertexai.init(project=PROJECT_ID, location=LOCATION)
 # Vertex AI
 print(f"Vertex AI SDK version: {aiplatform.__version__}")
 
-# # LLM model using LangChain
+## LLM model using LangChain
 # llm = VertexAI(
 #     model_name="text-bison@001",
 #     max_output_tokens=256,
@@ -48,7 +48,7 @@ print(f"Vertex AI SDK version: {aiplatform.__version__}")
 #     verbose=True,
 # )
 
-# # Chat
+## Chat
 # chat = ChatVertexAI()
 
 # Not using LangChain

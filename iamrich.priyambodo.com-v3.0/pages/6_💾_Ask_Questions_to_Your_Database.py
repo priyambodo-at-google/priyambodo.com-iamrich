@@ -105,13 +105,14 @@ if dataset_and_table_selected:
 
     @st.cache_data(show_spinner=False)
 
-    def submit_question():
+    def submit_question(): #the main function
         engine = get_sql_engine(source_dataset_selected)
         db = get_sql_db(engine, [table_selected])
         db_chain = get_db_chain(llm, db)
   
         t0 = time.time()
         final_prompt = GOOGLESQL_PROMPT.format(input=prompt_question, table_info=table_selected, top_k=2000000)
+        print(final_prompt)
         
         # result = db_chain.run(final_prompt)
         result = db_chain(final_prompt)
@@ -182,7 +183,8 @@ if dataset_and_table_selected:
                     st.warning(f"Sorry there are no Vizualisations available for this result")
 
             except Exception as e:
-                st.error(f"An Error Occurred. Check you're using the correct table!")
+                #st.error(f"An Error Occurred. Check you're using the correct table!")
+                st.error()
                                
 # with tab3:
 #     st.subheader("LLM's and Langchain")

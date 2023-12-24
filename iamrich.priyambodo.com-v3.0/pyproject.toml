@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "iamrich-priyambodo-com-v3-0"
+version = "3.0"
+description = "https://iamrich.priyambodo.com"
+authors = ["Doddi Priyambodo <doddi@bicarait.com>"]
+license = "GNU"
+readme = "README.md"
+packages = [{include = "iamrich"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+streamlit = "^1.29.0"
+google-cloud-aiplatform = "^1.38.1"
+google-cloud-logging = "^3.9.0"
+langchain = "0.0.235"
+sqlparse = "0.4.4"
+sqlalchemy = "1.4.49"
+sqlalchemy-bigquery = { version = "^1.7.0", markers = "python_version < '3.12'" }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
