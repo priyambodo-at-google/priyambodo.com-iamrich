@@ -3,13 +3,12 @@ import call_gemini as genai
 
 #st.header("Create a Marketing Campaign and a Story", divider="rainbow")
 st.header("Create a Marketing Campaign and a Story")
-st.write("Using Gemini Pro, Google Large Language Model ")
+st.write("Using Gemini, Google’s largest and most capable AI model")
 
 #tab1, tab2, tab3, tab4 = st.tabs(["Generate story","Marketing campaign",  "Image Playground", "Video Playground"])
 tab1, tab2 = st.tabs(["Marketing Campaign","Generate a Story"])
 
 with tab1:
-    st.write("Using Gemini Pro - Text only model")
     st.subheader("Generate your marketing campaign")
     
     product_name = st.text_input("What is the name of the product? \n\n",key="product_name",value="I am Rich Portfolio")
@@ -72,18 +71,30 @@ with tab1:
                 st.text(prompt)
 
 with tab2:
-    st.write("Using Gemini Pro - Text only model")
     st.subheader("Generate a story")
     
     # Story premise
-    character_name = st.text_input("Enter character name: \n\n",key="character_name",value="Mittens")
-    character_type = st.text_input("What type of character is it? \n\n",key="character_type",value="Cat")
+    character_name = st.text_input("Enter character name: \n\n",key="character_name",value="Doddi")
+    character_type = st.text_input("What type of character is it? \n\n",key="character_type",value="an adult person, newbie about financial investiment strategy")
     character_persona = st.text_input("What personality does the character have? \n\n",
-                                      key="character_persona",value="Mitten is a very friendly cat.")
-    character_location = st.text_input("Where does the character live? \n\n",key="character_location",value="Andromeda Galaxy")
-    story_premise = st.multiselect("What is the story premise? (can select multiple) \n\n",["Love","Adventure","Mystery","Horror","Comedy","Sci-Fi","Fantasy","Thriller"],key="story_premise",default=["Love","Adventure"])
-    creative_control = ""
-    length_of_story = ""
+                                      key="character_persona",value="Doddi is a fearless person.")
+    character_location = st.text_input("Where does the character live? \n\n",key="character_location",value="Jakarta, Indonesia")
+    story_premise = st.multiselect("What is the story premise? (can select multiple) \n\n",["Adventure","Love","Horror","Comedy","Action","Documentary","Sci-Fi","Fantasy","Thriller"],key="story_premise",default=["Comedy","Documentary"])
+    length_of_story = st.radio(
+        "Select the Length of the Story: \n\n",
+        ["short", "long"],
+        key="length_of_story",
+        horizontal=True,
+        index=1  
+    )
+    story_language = st.radio(
+        "Select the Language of the Story: \n\n",
+        ["English", "Indonesian", "Vietnamese", "Thai", "Chinese"],
+        key="story_language",
+        horizontal=True,
+        index=0  
+    )
+
     
     prompt = f"""Write a {length_of_story} story based on the following premise: \n
     character_name: {character_name} \n
@@ -91,25 +102,22 @@ with tab2:
     character_persona: {character_persona} \n
     character_location: {character_location} \n
     story_premise: {",".join(story_premise)} \n
-    If the story is "short", then make sure to have 5 chapters or else if it is "long" then 10 chapters. 
+    If the story is "short", then make sure to have 5 chapters, or else if it is "long" then 10 chapters. 
     Important point is that each chapters should be generated based on the premise given above.
     First start by giving the book introduction, chapter introductions and then each chapter. It should also have a proper ending.
     The book should have prologue and epilogue.
+
+    The story should be written in {story_language} language.
     """
     
     generate_t2t = st.button("Generate my story", key="generate_t2t")
     if generate_t2t and prompt:
         # st.write(prompt)
         with st.spinner("Generating your story using Gemini..."):
-            first_tab1, first_tab2 = st.tabs(["Story", "Prompt"])
-            with first_tab1: 
-                response = genai.genai_gemini_text_nolongchain(prompt)
-                if response:
-                    st.write("Your story:")
-                    st.write(response)
-            with first_tab2: 
-                st.text(prompt)
-                
+            response = genai.genai_gemini_text_nolongchain(prompt)
+            if response:
+                st.write("Your story:")
+                st.info(response)                
                 
 # with tab3:
 

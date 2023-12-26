@@ -22,7 +22,7 @@ def main():
 
     # Create a button to upload files
     # Create a button in Streamlit
-    url = "https://enterprisesearch-app-rzmyhdhywa-uc.a.run.app/alphabet.html"
+    url = "https://iamrich-priyambodo.firebaseapp.com/alphabet.html"
     text = "Search your questions about the document in here..."
     create_hyperlink_button(url, text)
 

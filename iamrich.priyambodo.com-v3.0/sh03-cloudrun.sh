@@ -1,5 +1,5 @@
-gcloud init
-gcloud auth login
+#gcloud init
+#gcloud auth login
 gcloud config set project work-mylab-machinelearning
 gcloud components update
 
@@ -8,7 +8,7 @@ export GCP_PROJECT='work-mylab-machinelearning'
 export AR_REPO='iamrich-priyambodocom-artifactregistry'  
 export SERVICE_NAME='iamrich-priyambodo-com' 
 
-gcloud artifacts repositories create "$AR_REPO" --location="$GCP_REGION" --repository-format=Docker
+#gcloud artifacts repositories create "$AR_REPO" --location="$GCP_REGION" --repository-format=Docker
 gcloud auth configure-docker "$GCP_REGION-docker.pkg.dev"
 gcloud builds submit --tag "$GCP_REGION-docker.pkg.dev/$GCP_PROJECT/$AR_REPO/$SERVICE_NAME"
 
@@ -22,4 +22,5 @@ gcloud run deploy "$SERVICE_NAME" \
    --set-env-vars=GCP_PROJECT=$GCP_PROJECT,GCP_REGION=$GCP_REGION
 
 #Result: 
-https://iamrich-priyambodo-com-rzmyhdhywa-uc.a.run.app/
+#Service URL: https://iamrich-priyambodo-com-rzmyhdhywa-uc.a.run.app
+#Public URL: https://iamrich.priyambodo.com 

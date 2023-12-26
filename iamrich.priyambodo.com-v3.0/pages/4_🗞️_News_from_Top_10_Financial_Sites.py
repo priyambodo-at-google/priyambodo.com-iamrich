@@ -62,6 +62,6 @@ st.markdown(html_code, unsafe_allow_html=True)
 def create_hyperlink_button(url, text):
   button_html = f'<a href="{url}" target="_blank">{text}</a>'
   return st.markdown(button_html, unsafe_allow_html=True)
-url = "https://enterprisesearch-app-rzmyhdhywa-uc.a.run.app/news.html"
+url = "https://iamrich-priyambodo.firebaseapp.com/news.html"
 text = "Search your financial articles in here..."
 create_hyperlink_button(url, text)

@@ -20,7 +20,7 @@ def run():
     st.set_page_config(page_icon="image/usd.ico")
     st.markdown(vNoLabel, unsafe_allow_html=True)
     st.write("# 💰 IamRich - Your Smart Personal Financial Advisor application (v3.0)")
-    st.subheader("//IamRich is powered by Google Cloud Generative AI!")
+    st.write("[https://iamrich.priyambodo.com] | [https://iamtelco.priyambodo.com] | [https://iamgemini.priyambodo.com]")
     st.write(html_code)
    
     st.markdown(
@@ -28,8 +28,9 @@ def run():
         **👈 Select the menu from the sidebar** to start your experience. 
         """
     )
-    st.image("image/IamRich.png", width=700)
-    #st.sidebar.success("Select the use cases that you would like to see above.")
+    st.image("image/logo.png", width=700)
+    st.write("*(The logo image above is created by Google AI using Imagen 2 model.)*")
+    #st.write("prompt imagen2: I am Rich is a Financial AI super hero advisor application designed to empower users to earn more money. Create big text written \"I am Rich\". Create in a volumetric lighting, high resolution, hdr, sharpen picture.")
 
     st.write("""
     <div style="text-align:center;padding:1em 0;"> 

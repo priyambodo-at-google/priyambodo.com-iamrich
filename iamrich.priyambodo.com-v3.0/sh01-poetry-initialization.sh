@@ -1,6 +1,8 @@
 #/bin/bash
 pip install --upgrade pip
 pip install --upgrade poetry
+rm pyproject.toml
+rm poetry.lock
 
 #Initialize the Poetry environment 
 poetry new myapp #(optional)
@@ -18,9 +20,9 @@ poetry add google-cloud-logging
 poetry add langchain=0.0.235
 poetry add sqlparse=0.4.4
 poetry add SQLAlchemy=1.4.49
-poetry add sqlalchemy-bigquery;python_version<'3.12'
+poetry add sqlalchemy-bigquery;python_version < '3.12'
 
-#Create requirements.txt (Google Cloud Build need this)
+#Create requirements.txt (optional)
 poetry export -f requirements.txt --output requirements.txt
 
 #Operational that you might need (optional)

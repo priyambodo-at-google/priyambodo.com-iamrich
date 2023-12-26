@@ -17,8 +17,13 @@ with st.sidebar:
 def run():
     st.markdown(vNoLabel, unsafe_allow_html=True)
     st.write("# About IamRich")
-    st.subheader("//powered by Google Cloud Generative AI!")
+    st.subheader("//powered by Google Cloud Generative AI (Gemini!)")
     st.write(html_code)
+    st.write("---")
+    st.subheader("Check my other Google Generative AI projects at: ")
+    st.write("- I am Rich, a Personal Financial Advisor Application : https://iamrich.priyambodo.com")
+    st.write("- I am Telco, a Smart Telco AI Advisor Application : https://iamtelco.priyambodo.com")
+    st.write("---")
     st.write(
         """
         **This is the Technical Architecture** of IamRich Application: 
