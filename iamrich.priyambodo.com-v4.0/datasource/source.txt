@@ -1,0 +1,2 @@
+gsutil cp -r gs://cloud-samples-data/gen-app-builder/search/alphabet-investor-pdfs .
+gsutil cp -r gs://cloud-samples-data/gen-app-builder/search/kaggle_movies .
